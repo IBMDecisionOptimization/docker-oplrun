@@ -14,8 +14,7 @@ RUN chmod u+x /tmp/installer
 
 # Install Java runtime. This is required by the installer.
 # It is also required in case the .mod file uses external Java
-RUN apt-get update
-RUN apt-get install -y default-jre
+RUN apt-get update && apt-get install -y default-jre
 
 # Install COS
 RUN /tmp/installer -f /tmp/install.properties
